@@ -1,14 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-void main() => runApp(XylophoneApp());
+void main() => runApp(const XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
-  Expanded buildKey({required Color colorr, required int soundNumber}) {
+  const XylophoneApp({Key? key}) : super(key: key);
+
+  Expanded buildKey({required Color color, required int soundNumber}) {
     return Expanded(
       child: TextButton(
-        style: ButtonStyle(backgroundColor: MaterialStateProperty.all(colorr)),
+        style: ButtonStyle(backgroundColor: MaterialStateProperty.all(color)),
         onPressed: () {
           final player = AudioCache();
           player.play('note$soundNumber.wav');
@@ -21,18 +22,19 @@ class XylophoneApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.black,
         body: SafeArea(
           child: Column(
             children: [
-              buildKey(colorr: Colors.red, soundNumber: 1),
-              buildKey(colorr: Colors.orange, soundNumber: 2),
-              buildKey(colorr: Colors.yellow, soundNumber: 3),
-              buildKey(colorr: Colors.green, soundNumber: 4),
-              buildKey(colorr: Colors.blue, soundNumber: 5),
-              buildKey(colorr: Colors.lightBlueAccent, soundNumber: 6),
-              buildKey(colorr: Colors.deepPurple, soundNumber: 7),
+              buildKey(color: Colors.red, soundNumber: 1),
+              buildKey(color: Colors.orange, soundNumber: 2),
+              buildKey(color: Colors.yellow, soundNumber: 3),
+              buildKey(color: Colors.green, soundNumber: 4),
+              buildKey(color: Colors.blue, soundNumber: 5),
+              buildKey(color: Colors.lightBlueAccent, soundNumber: 6),
+              buildKey(color: Colors.deepPurple, soundNumber: 7),
             ],
           ),
         ),
