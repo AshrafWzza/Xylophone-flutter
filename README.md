@@ -5,5 +5,5 @@ Audio Player
 ## Getting Started
 
 ### Resource
-- [audioplayers Package](https://pub.dev/packages/audioplayers/install)
+- [audioplayers Package](https://pub.dev/packages/audioplayers/)
 
